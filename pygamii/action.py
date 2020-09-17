@@ -100,22 +100,22 @@ class MultipleMoveAction(Action):
 
 class EventAction(Action):
     _events = {}
-    triggeds = []
+    triggers = []
 
     def register(self, event, fn):
         self._events.setdefault(event, [])
         self._events[event].append(fn)
 
     def trigger(self, event, *args, **kwargs):
-        self.triggeds.append((event, args, kwargs))
+        self.triggers.append((event, args, kwargs))
 
     def do(self):
-        triggeds = self.triggeds[:]
-        for trigger in triggeds:
+        trigs = self.triggers[:]
+        for trig in trigs:
             event, args, kwargs = trigger
             events = self._events.get(event, [])
 
             for event in events:
                 event(*args, **kwargs)
 
-            self.triggeds.remove(trigger)
+            self.triggeds.remove(trig)
