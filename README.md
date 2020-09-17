@@ -7,15 +7,19 @@ Pygamii is a ascii game engine, created to make games in console.
 
 [http://pygamii.readthedocs.org/en/develop/](http://pygamii.readthedocs.org/en/develop/)
 
-## Instalation
+## Installation
 Clone this repository and run setup.py.
 
     python setup.py install
 
 To use Audio Library, you need install PyGame http://www.pygame.org/download.shtml
 
+If you're on Windows, you will need to install `windows-curses` to fix the `_curses not found` import error on Windows.
+
+    pip install windows-curses
+
 ## Examples
-In examples path, you will found Arkanoid.
+In examples path, you will find Arkanoid.
 
 ### Arkanoid
 ![Arkanoid](https://raw.githubusercontent.com/carlosmaniero/pygamii/develop/examples/arkanoid/screenshots/arkanoid-main.png)
@@ -30,7 +34,7 @@ To run Arkanoid example, enter in your directory [examples/arkanoid](examples/ar
     python arkanoid.py
 
 ## Notes
-This is a alpha version, I create it using Python3 and Linux.
+This is a alpha version, it was created using Python 3 on Linux.
 Compatibility errors may occur.
 
 
@@ -38,7 +42,7 @@ Compatibility errors may occur.
 ## version 0.0.1.5 - Alpha
 - Change the BaseKeyboard action to use curses.
 - Change the add_action to use an object not a class.
-- Improviments in the PyGamii
+- Improvements to PyGamii
 
 
 ## version 0.0.1.4 - Alpha
