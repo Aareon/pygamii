@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 import threading
 import time
 import curses
+import sys
 
 
 class Action(threading.Thread):
@@ -22,8 +23,7 @@ class Action(threading.Thread):
                     time.sleep(self.interval)
         except Exception as e:
             print(e)
-            import os
-            os._exit(0)
+            sys.exit(0)
 
     def stop(self):
         self.running = False
@@ -58,7 +58,7 @@ class BaseKeyboard(Action):
         raise NotImplementedError
 
     def on_create(self):
-        # To handler getch and render, we need create a custom windows
+        # To handle getch and render, we need create a custom window
         self.stdscr = curses.newwin(0, 0, 0, 0)
         self.stdscr.keypad(True)
         self.stdscr.nodelay(True)
