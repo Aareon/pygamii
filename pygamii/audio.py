@@ -8,7 +8,7 @@ except ImportError:
 
 
 if have_pygame:
-    class Audio(object):
+    class Audio:
         file = None
         song = None
 
@@ -40,7 +40,7 @@ if have_pygame:
 
 else:
     # Simple Interface to prevent crashs
-    class Audio(object):
+    class Audio:
         file = None
         song = None
 
